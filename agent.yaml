@@ -1,0 +1,39 @@
+spec_version: "0.1.0"
+name: git-creditscoring
+version: 1.0.0
+description: "Autonomous Commercial Debt Service Coverage (DSCR), Underwriting & Default Risk Agent"
+author: "masood-mashu"
+license: "Apache-2.0"
+
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - commercial-dscr-underwriting
+  - credit-covenant-verification
+
+tools:
+  - dscr-ratio-calculator
+  - default-probability-scorer
+  - credit-covenant-auditor
+
+runtime:
+  max_turns: 50
+  timeout: 120
+
+tags:
+  - finance
+  - credit-scoring
+  - commercial-lending
+  - dscr
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-creditscoring-01"
+  passport_category: "Finance"

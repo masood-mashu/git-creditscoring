@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "default_probability_scorer",
+  "description": "Calculates corporate debt-to-equity ratio and risk tier classification",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "balance_sheet_json": {
+        "type": "string",
+        "description": "JSON string containing total_debt and equity_value in USD"
+      }
+    },
+    "required": [
+      "balance_sheet_json"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

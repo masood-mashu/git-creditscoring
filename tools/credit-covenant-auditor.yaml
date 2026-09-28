@@ -1,0 +1,18 @@
+name: credit-covenant-auditor
+version: 1.0.0
+description: "Audits borrower loan-to-value (LTV) percentage against commercial collateral limits"
+input_schema:
+  type: object
+  properties:
+    collateral_data_json:
+      type: string
+      description: "JSON string containing loan_amount and appraised_property_value"
+  required:
+    - collateral_data_json
+implementation:
+  type: script
+  path: credit_covenant_auditor.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true
